@@ -15,4 +15,6 @@ Download the source, then...
 * `bower install`
 * `dnx web`
 
-Browse to localhost:5000 and click the "Send Simple Message" button to invoke a SignalR server method. I'm using this project to demo [SwiftR](https://github.com/adamhartford/SwiftR "SwiftR"), a SignalR "client" for Mac/iOS.
+Browse to localhost:5000 and click the "Send Simple Message" button to invoke a SignalR server method. 
+
+I'm using this project to demo [SwiftR](https://github.com/adamhartford/SwiftR "SwiftR"), a SignalR "client" for Mac/iOS. (And to get up to speed on .NET Core, etc.)
