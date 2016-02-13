@@ -1,0 +1,7 @@
+{
+  "name": "SignalRApplication",
+  "private": true,
+  "dependencies": {
+    "signalr": "~2.2.0"
+  }
+}

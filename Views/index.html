@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SignalR Demo</title>
+    </head>
+    <body>
+        <h1>SignalR Demo</h1>
+        <p>
+            <input type="button" value="Send Simple Message">
+        </p>
+        <script src="wwwroot/lib/jquery/dist/jquery.min.js"></script>
+        <script src="wwwroot/lib/signalr/jquery.signalR.min.js"></script>
+        <script>
+        $(function() {
+            var connection = $.hubConnection();
+            var simpleHub = connection.createHubProxy('simpleHub');
+            
+            simpleHub.on('notifySimple', function(message, detail) {
+                alert(message + ': ' + detail);
+            });
+            
+            connection.start(function() {
+                $('input').click(function() {
+                    simpleHub.invoke('sendSimple', 'foo', 'bar');
+                }); 
+            });
+        });
+        </script>    
+    </body>
+</html>
