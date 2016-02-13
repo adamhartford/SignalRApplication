@@ -8,6 +8,7 @@ An example project using DNX/DNU, Nancy, and SignalR. I used:
 
 ## Running
 
+* Download source
 * `cd SignalRApplication`
 * `dnu restore`
 * `bower install`
