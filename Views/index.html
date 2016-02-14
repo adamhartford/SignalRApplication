@@ -11,20 +11,20 @@
         <script src="wwwroot/lib/jquery/dist/jquery.min.js"></script>
         <script src="wwwroot/lib/signalr/jquery.signalR.min.js"></script>
         <script>
-        $(function() {
-            var connection = $.hubConnection();
-            var simpleHub = connection.createHubProxy('simpleHub');
-            
-            simpleHub.on('notifySimple', function(message, detail) {
-                alert(message + ': ' + detail);
+            $(function() {
+                var connection = $.hubConnection();
+                var simpleHub = connection.createHubProxy('simpleHub');
+                
+                simpleHub.on('notifySimple', function(message, detail) {
+                    alert(message + ': ' + detail);
+                });
+                
+                connection.start(function() {
+                    $('input').click(function() {
+                        simpleHub.invoke('sendSimple', 'foo', 'bar');
+                    }); 
+                });
             });
-            
-            connection.start(function() {
-                $('input').click(function() {
-                    simpleHub.invoke('sendSimple', 'foo', 'bar');
-                }); 
-            });
-        });
         </script>    
     </body>
 </html>
