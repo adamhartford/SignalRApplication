@@ -8,6 +8,8 @@ An example project using DNX/DNU, Nancy, and SignalR. I used:
 
 ## Running
 
+Make sure you've enabled NuGet package source: https://www.myget.org/F/aspnetmaster/api/v2/
+
 Download the source, then...
 
 * `cd SignalRApplication`
