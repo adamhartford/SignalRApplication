@@ -1,4 +1,4 @@
-# .NET Core + Nancy + SignalR
+# ASP.NET 5 + Nancy + SignalR
 
 An example project using DNX/DNU, Nancy, and SignalR. I used:
 
