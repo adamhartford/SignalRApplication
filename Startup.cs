@@ -7,16 +7,23 @@ namespace SignalRApplication
     using Nancy;
     using Nancy.Owin;
     using Nancy.Conventions;
- 
+    
     public class Startup
     {
         public void Configure(IApplicationBuilder app)
-        {
+        {   
+            app.UseCors("AllowAll");            
             app.UseSignalR().UseOwin(x => x.UseNancy());
         }
         
         public virtual void ConfigureServices(IServiceCollection services) 
-        {            
+        {         
+          
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+            });
             services.AddSignalR();   
         }
 
